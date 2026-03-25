@@ -29,7 +29,7 @@ Postman을 활용하여 회원가입/로그인 인증 API를 테스트하고,
 | Variables | `{{baseUrl}}`, `{{testEmail}}`, `{{testPassword}}`, `{{testName}}` |
 
 ---
-
+## 자동 검증 (Postman Script)
 ## 테스트 케이스 구성
 
 | No | 테스트 케이스 | 목적 | 기대 결과 |
