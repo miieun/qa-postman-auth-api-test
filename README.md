@@ -39,6 +39,9 @@ Postman을 활용하여 회원가입/로그인 인증 API를 테스트하고,
 | 3 | Verify Login - Wrong Password | 잘못된 비밀번호 입력 시 예외 응답 확인 | `responseCode = 404`, `message = "User not found!"` |
 | 4 | Verify Login - Missing Email | 필수 파라미터(email) 누락 시 예외 처리 확인 | `responseCode = 400`, `message`에 `missing` 포함 |
 | 5 | Verify Login - Invalid Method | 지원하지 않는 HTTP Method 요청 시 예외 처리 확인 | `responseCode = 405`, `message`에 `not supported` 포함 |
+| 6 | Verify Login - Missing Password | 필수 파라미터(password) 누락 시 예외 처리 확인 | `responseCode = 400`, `message`에 `missing` 포함 |
+| 7 | Verify Login - Empty Email | email 빈값 입력 시 비정상 응답 확인 | 실패 응답 반환 (`responseCode != 200`) |
+| 8 | Verify Login - Empty Password | password 빈값 입력 시 비정상 응답 확인 | 실패 응답 반환 (`responseCode != 200`) |
 
 ---
 
@@ -73,6 +76,15 @@ pm.test("responseCode는 200이다", function () {
 ### Verify Login - Missing Email
 ![Missing Email](docs/08_login_missing_email_test_results.png)
 
+### Verify Login - Missing Password
+![Missing Password](docs/12_login_missing_password_test_results.png)
+
+### Verify Login - Empty Email
+![Empty Email](docs/14_login_empty_email_test_results.png)
+
+### Verify Login - Empty Password
+![Empty Password](docs/16_login_empty_password_test_results.png)
+
 ---
 
 ## 폴더 구조
@@ -94,7 +106,13 @@ postman-auth-test/
     ├── 07_login_wrong_password_test_results.png
     ├── 08_login_missing_email_test_results.png
     ├── 09_login_invalid_method_test_results.png
-    └── 10_signup_success_test_results.png
+    ├── 10_signup_success_test_results.png
+    ├──  11_login_missing_password.png
+    ├──  12_login_missing_password_test_results.png
+    ├── 13_login_empty_email.png
+    ├── 14_login_empty_email_test_results.png
+    ├── 15_login_empty_password.png
+    └── 16_login_empty_password_test_results.png
 ```
 
 ---
